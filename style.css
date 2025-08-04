@@ -1,0 +1,290 @@
+/* -- Genel sayfa ayarları ve tema -- */
+:root {
+  /* Açık tema renkleri */
+  --bg-color: #f1f5f9;
+  --text-color: #222;
+  --form-bg: #fff;
+  --primary-color: #387f78; /* Tavuskuşu su yeşili */
+  --input-bg: #fff;
+  --input-placeholder: #aaa;
+  --button-bg-start: #387f78;
+  --button-bg-end: #1cb8c0;
+  --button-shadow: rgba(7, 122, 145, 0.9);
+  --box-shadow-main: rgba(16, 137, 211, 0.5);
+  --social-bg-start: rgb(0, 0, 0);
+  --social-bg-end: rgb(112, 112, 112);
+  --social-shadow: rgba(133, 189, 215, 0.88);
+}
+
+body.dark-theme {
+  /* Karanlık tema renkleri */
+  --bg-color: #121212;
+  --text-color: #eee;
+  --form-bg: #1f1f1f;
+  --primary-color: #33d9b2; /* Su yeşiline biraz daha açık */
+  --input-bg: #2a2a2a;
+  --input-placeholder: #666;
+  --button-bg-start: #33d9b2;
+  --button-bg-end: #0e8174;
+  --button-shadow: rgba(51, 217, 178, 0.9);
+  --box-shadow-main: rgba(51, 217, 178, 0.7);
+  --social-bg-start: #444;
+  --social-bg-end: #222;
+  --social-shadow: rgba(51, 217, 178, 0.7);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Login ve logo yan yana sarmalayıcı */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--form-bg);
+  padding: 50px 60px;
+  border-radius: 24px;
+  box-shadow:
+    0 0 30px var(--box-shadow-main),
+    0 15px 40px rgba(0, 0, 0, 0.15);
+  max-width: 2400px;
+  width: 100%;
+  gap: 50px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.login-wrapper:hover {
+  box-shadow:
+    0 0 50px var(--box-shadow-main),
+    0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo konteyneri */
+.logo-container {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+/* Logo resmi orta büyüklükte, efekt kaldırıldı */
+.logo {
+  max-height: 250px;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: none; /* Efekt kaldırıldı */
+}
+
+/* Form alanı */
+.form {
+  flex-grow: 1;
+  max-width: 900px;
+    width: 100%;
+  display: flex;
+  margin-top: 40px; 
+  flex-direction: column;
+  
+}
+
+/* Başlık */
+.heading {
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 50px; 
+  position: relative;
+  top: 50px;
+  
+}
+
+/* Inputlar */
+.input {
+  width: 100%;
+  background: var(--input-bg);
+  border: none;
+  padding: 24px 20px;
+  border-radius: 22px;
+  margin-top: 20px;
+  box-shadow: #cff0ff 0px 12px 12px -5px;
+  border-inline: 3px solid transparent;
+  font-size: 18px;
+  color: var(--text-color);
+  min-width: 300px; /* Sabit minimum genişlik */
+  transition: border-inline 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input:focus {
+  outline: none;
+  border-inline: 3px solid var(--primary-color);
+  background: var(--form-bg);
+  color: var(--text-color);
+}
+
+/* Forgot password link */
+.forgot-password {
+  margin-top: 30px;
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.forgot-password a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #0a8a9d;
+}
+
+/* Giriş butonu */
+.login-button {
+  margin-top: 30px;
+  font-weight: bold;
+  background: linear-gradient(45deg, var(--button-bg-start) 0%, var(--button-bg-end) 100%);
+  color: white;
+  padding-block: 24px;
+  border-radius: 22px;
+  box-shadow: 0 20px 15px -10px var(--button-shadow);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 22px; 
+   margin-left: 25px;
+
+}
+
+.login-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 25px 20px -8px var(--button-shadow);
+}
+
+.login-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 15px 12px -6px var(--button-shadow);
+}
+
+/* Sosyal giriş butonları */
+.social-account-container {
+  margin-top: 30px;
+}
+
+.social-account-container .title {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--input-placeholder);
+}
+
+.social-account-container .social-accounts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.social-account-container .social-accounts .social-button {
+  background: linear-gradient(45deg, var(--social-bg-start) 0%, var(--social-bg-end) 100%);
+  border: 5px solid var(--form-bg);
+  padding: 6px;
+  border-radius: 50%;
+  width: 44px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 12px 12px -7px var(--social-shadow);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.social-account-container .social-accounts .social-button .svg {
+  fill: white;
+  margin: auto;
+}
+
+.social-account-container .social-accounts .social-button:hover {
+  transform: scale(1.25);
+}
+
+.social-account-container .social-accounts .social-button:active {
+  transform: scale(0.9);
+}
+
+/* Kullanıcı sözleşmesi linki */
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 10px;
+  transition: color 0.3s ease;
+}
+
+.agreement a:hover {
+  color: #0a8a9d;
+}
+
+/* Tema değiştirme butonu */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 30px;
+  width: 55px;
+  height: 28px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+.theme-toggle .circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 2px;
+  transition: margin 0.3s ease;
+}
+
+body.dark-theme .theme-toggle .circle {
+  margin-left: 29px;
+}
+.login-footer {
+  text-align: center;
+  margin-top: 30px;  /* Form ile footer arasında boşluk */
+  font-size: 14px;
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  user-select: none;
+}
+
+
